@@ -108,7 +108,6 @@ class RBM(nn.Module):
         X_prob = torch.matmul(X, self.W.transpose(0, 1))
         X_prob = torch.add(X_prob, self.v_bias)
         X_prob = torch.sigmoid(X_prob)
-        #X_prob = torch.ReLu(X_prob)
 
         sample_X_prob = self.sampling(X_prob)
 
