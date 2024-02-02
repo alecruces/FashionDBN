@@ -89,7 +89,7 @@ class RBM(nn.Module):
         """
         X_prob = torch.matmul(X, self.W)
         X_prob = torch.add(X_prob, self.h_bias)  # W.x + c
-        X_prob = torch.ReLu(X_prob)
+        X_prob = F.relu(X_prob)
 
         sample_X_prob = self.sampling(X_prob)
 
@@ -107,8 +107,8 @@ class RBM(nn.Module):
         # computing hidden activations and then converting into probabilities
         X_prob = torch.matmul(X, self.W.transpose(0, 1))
         X_prob = torch.add(X_prob, self.v_bias)
-        X_prob = torch.sigmoid(X_prob)
-        #X_prob = torch.ReLu(X_prob)
+        X_prob = F.relu(X_prob)
+
 
         sample_X_prob = self.sampling(X_prob)
 
@@ -194,8 +194,7 @@ class RBM(nn.Module):
             self.h_bias += self.h_bias_update
 
         # Compute reconstruction error
-        error = torch.mean(
-            torch.sum((input_data - negative_visible_probabilities)**2, dim=0))
+        error =  F.mse_loss(negative_visible_probabilities, input_data)
 
         return error, torch.sum(torch.abs(self.grad_update))
 
