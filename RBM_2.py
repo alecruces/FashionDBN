@@ -119,7 +119,10 @@ class RBM(nn.Module):
 
         :param prob:
         """
-        s = torch.distributions.Bernoulli(prob).sample()
+        #s = torch.distributions.Bernoulli(prob).sample()
+        # ReLU-based sampling
+        #s = torch.distributions.bernoulli.Bernoulli(prob).sample()
+        s = (prob >= torch.rand_like(prob)).float()
         return s
 
     def reconstruction_error(self, data):
