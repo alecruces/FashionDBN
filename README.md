@@ -12,12 +12,14 @@ Image Classification, Deep Belief Network (DBN), FashionMNIST, Adversarial Attac
 
 ## Methods  
 * Deep Belief Network
-* *Feedforward networks
+* Feedforward networks
 
 ## Software 
-*Python (Pytorch)
+* Python (Pytorch)
 
 ## Files  
-*Code
+* Code:
+  - `code.ipynb`: Jupyter notebook that run al the project.
+  - `DBN.py` and `RBN.py`: Have the functions called by `code.ipynb`.
 
 
