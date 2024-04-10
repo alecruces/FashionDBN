@@ -1,4 +1,4 @@
-# Title Implementing a Deep Belief Network in PyTorch using the FashionMNIST dataset
+# Implementing a Deep Belief Network in PyTorch using the FashionMNIST dataset
 ![fashion1](https://github.com/alecruces/cognition_and_computation/assets/67338986/627279a5-c2d2-404c-bd22-676a9d3ca0cc)
 
 ##  Description 
